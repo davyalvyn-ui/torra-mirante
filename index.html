@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clube Torra Mirante | Café especial por assinatura</title>
+<meta name="description" content="Assine o Clube Torra Mirante e receba cafés especiais de pequenos produtores, torrados sob encomenda, em grãos, moídos ou em cápsulas. Projeto de portfólio com marca fictícia.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#1E140F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='9' ry='13' transform='rotate(30 16 16)' fill='%237A4527'/%3E%3Cpath d='M11 25c4-4 7-14 11-18' stroke='%23D6A877' stroke-width='2.2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+
+<!-- Compartilhamento (WhatsApp, LinkedIn, Facebook).
+     Depois de publicar, troque SEU-ENDERECO pelo link real do site, por exemplo:
+     https://seu-usuario.github.io/torra-mirante -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Clube Torra Mirante | Café especial por assinatura">
+<meta property="og:description" content="Café especial fresquinho na sua porta, todo mês. Projeto de portfólio.">
+<meta property="og:image" content="https://SEU-ENDERECO/img/og-image.jpg">
+<meta property="og:url" content="https://SEU-ENDERECO/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preload" href="fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+/* Reset básico */
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+/* Layout: landing page de um objetivo (assinatura). Hero fotográfico, como funciona em 3 passos, seletor de formato + planos, história curta, depoimentos, perguntas, chamada final. Visual único (claro e quente), sem tema escuro. */
+:root{
+  color-scheme: light;
+  --cream:#F7F2EA; --paper:#FFFDF9; --ink:#241A14; --muted:#6B5A4D; --line:#E4D9CB;
+  --espresso:#1E140F; --on-dark:#F6EFE5; --on-dark-muted:#D3C3B1;
+  --brown:#7A4527; --brown-hover:#673A20; --tan:#D6A877; --tan-soft:#F1E3CF; --green:#22362B;
+  --f-display:'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --f-body:'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-script:'Caveat', 'Brush Script MT', cursive;
+  --wrap:1160px;
+}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+a{color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-0.01em}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:clamp(16px,4vw,32px)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
+:focus-visible{outline:2px solid var(--tan);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding-inline:28px;border-radius:6px;font:700 16px var(--f-body);text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:background .2s ease,color .2s ease}
+.btn svg{width:16px;height:16px}
+.btn-brown{background:var(--brown);color:var(--on-dark)}
+.btn-brown:hover{background:var(--brown-hover)}
+.btn-dark{background:var(--espresso);color:var(--on-dark)}
+.btn-dark:hover{background:#3A2A20}
+.reassure{font-size:13px;display:flex;flex-wrap:wrap;gap:6px 18px}
+.reassure span{display:inline-flex;align-items:center;gap:6px}
+.reassure svg{width:14px;height:14px}
+
+/* Topo */
+.hero{position:relative;color:var(--on-dark);background:var(--espresso) url("img/banner-1.jpg") 70% center/cover no-repeat;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(20,13,9,.94) 0%,rgba(20,13,9,.78) 40%,rgba(20,13,9,.12) 72%,rgba(20,13,9,0) 100%)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px}
+.logo{display:flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;font-family:var(--f-display);font-size:26px}
+.bar .btn{min-height:44px;padding-inline:20px;font-size:14px}
+.hero-body{padding-block:clamp(36px,6vw,88px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:22px;max-width:580px}
+.offer{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:var(--tan);color:var(--espresso);font-size:13px;font-weight:800}
+.hero h1{font-size:clamp(44px,6.4vw,84px);line-height:1}
+.hero h1 em{font-style:normal;color:var(--tan)}
+.hero-lead{max-width:470px;font-size:18px;color:var(--on-dark-muted)}
+.hero .reassure{color:var(--on-dark-muted)}
+.script{position:absolute;right:clamp(16px,4vw,32px);top:100px;font-family:var(--f-script);font-size:clamp(26px,3vw,38px);line-height:1;color:var(--on-dark);transform:rotate(-8deg);text-align:right;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+
+/* Seções */
+.section{padding-block:clamp(56px,8vw,96px)}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;max-width:640px}
+.head.center{margin-inline:auto;text-align:center;align-items:center}
+.head .eyebrow{color:var(--brown)}
+.head h2{font-size:clamp(34px,4.4vw,52px);line-height:1.04}
+.head p{color:var(--muted);font-size:17px}
+
+/* Como funciona */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:step}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.step-num{width:44px;height:44px;border-radius:999px;background:var(--espresso);color:var(--on-dark);font-family:var(--f-display);font-size:22px;display:flex;align-items:center;justify-content:center}
+.step h3{font-size:26px;line-height:1.1}
+.step p{color:var(--muted);font-size:15px}
+
+/* Planos */
+.plans-sec{background:var(--paper);border-block:1px solid var(--line)}
+.label-step{font-size:14px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.label-step b{width:26px;height:26px;border-radius:999px;background:var(--brown);color:var(--on-dark);display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+.formats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:44px}
+.format{position:relative;display:flex;align-items:center;gap:14px;padding:12px;border-radius:10px;border:2px solid var(--line);background:var(--cream);cursor:pointer;text-align:left;font:inherit;color:inherit;transition:border-color .2s ease,background .2s ease}
+.format:hover{border-color:var(--tan)}
+.format[aria-pressed="true"]{border-color:var(--brown);background:var(--tan-soft)}
+.format img{width:72px;height:72px;border-radius:8px;object-fit:cover;flex-shrink:0}
+.format strong{display:block;font-size:16px}
+.format small{display:block;font-size:13px;color:var(--muted);line-height:1.4}
+.format .tick{position:absolute;top:10px;right:10px;width:22px;height:22px;border-radius:999px;border:2px solid var(--line);background:var(--paper)}
+.format[aria-pressed="true"] .tick{border-color:var(--brown);background:var(--brown) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F6EFE5' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/14px no-repeat}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.plan{position:relative;display:flex;flex-direction:column;gap:14px;padding:30px 26px;border-radius:12px;border:1px solid var(--line);background:var(--cream)}
+.plan.featured{background:var(--espresso);color:var(--on-dark);border-color:var(--espresso);box-shadow:0 24px 50px rgba(30,20,15,.25)}
+.plan .tag{position:absolute;top:-13px;left:26px;padding:4px 12px;border-radius:999px;background:var(--tan);color:var(--espresso);font-size:12px;font-weight:800}
+.plan h3{font-size:30px}
+.plan .qty{font-size:14px;color:var(--muted)}
+.plan.featured .qty{color:var(--on-dark-muted)}
+.plan .price{font-family:var(--f-display);font-size:40px;line-height:1;font-variant-numeric:tabular-nums}
+.plan .price small{font-family:var(--f-body);font-size:15px;color:var(--muted)}
+.plan.featured .price small{color:var(--on-dark-muted)}
+.plan .percup{margin-top:-6px;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.plan .percup b{color:var(--ink)}
+.plan.featured .percup{color:var(--on-dark-muted)}
+.plan.featured .percup b{color:var(--on-dark)}
+.freqs{display:inline-flex;flex-wrap:wrap;gap:6px;padding:6px;margin-bottom:44px;border-radius:12px;background:var(--cream);border:1px solid var(--line)}
+.freq{min-height:44px;padding-inline:18px;border:0;border-radius:8px;background:transparent;color:var(--ink);font:700 15px var(--f-body);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .2s ease,color .2s ease}
+.freq:hover{background:var(--tan-soft)}
+.freq[aria-pressed="true"]{background:var(--espresso);color:var(--on-dark)}
+.freq small{font-size:12px;font-weight:600;opacity:.75}
+.guarantee{margin-top:36px;display:flex;flex-wrap:wrap;align-items:center;gap:20px 28px;padding:26px 30px;border-radius:12px;border:2px dashed var(--tan);background:var(--cream)}
+.seal{width:84px;height:84px;flex-shrink:0;border-radius:999px;background:var(--brown);color:var(--on-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1}
+.seal b{font-family:var(--f-display);font-size:30px;font-weight:400}
+.seal span{font-size:10px;font-weight:800;letter-spacing:.12em;margin-top:4px}
+.guarantee .g-text{flex:1 1 320px;min-width:0}
+.guarantee h3{font-size:26px;line-height:1.1;margin-bottom:6px}
+.guarantee p{color:var(--muted);font-size:15px}
+.plan .promo{align-self:flex-start;margin-top:-4px;padding:5px 12px;border-radius:999px;background:var(--tan-soft);color:var(--brown);font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+.plan.featured .promo{background:rgba(214,168,119,.18);color:var(--tan)}
+.plan ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li svg{width:18px;height:18px;flex-shrink:0;margin-top:3px;color:var(--brown)}
+.plan.featured li svg{color:var(--tan)}
+.plan .btn{margin-top:auto;width:100%}
+.plan.featured .btn{background:var(--tan);color:var(--espresso)}
+.plan.featured .btn:hover{background:#E2B888}
+.plans-note{margin-top:22px;text-align:center;font-size:14px;color:var(--muted)}
+.picked{margin-top:22px;padding:16px 20px;border-radius:10px;background:var(--green);color:var(--on-dark);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.picked p{font-size:15px}
+.picked .btn{min-height:44px;background:var(--on-dark);color:var(--espresso)}
+
+/* História */
+.story{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:var(--green);color:var(--on-dark)}
+.story-img{min-height:360px}
+.story-img img{width:100%;height:100%;object-fit:cover;object-position:60% center}
+.story-copy{padding:clamp(32px,5vw,64px);display:flex;flex-direction:column;justify-content:center;gap:16px}
+.story-copy .eyebrow{color:var(--tan)}
+.story-copy h2{font-size:clamp(32px,3.8vw,46px);line-height:1.05}
+.story-copy p{color:var(--on-dark-muted);max-width:440px}
+.story-list{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 20px;font-size:14px;font-weight:600}
+.story-list li{display:flex;gap:8px;align-items:center}
+.story-list svg{width:18px;height:18px;color:var(--tan);flex-shrink:0}
+
+/* Depoimentos */
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.review{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:16px}
+.review blockquote{margin:0;font-family:var(--f-display);font-size:20px;line-height:1.35}
+.review figcaption{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:700;margin-top:auto}
+.review figcaption span span{display:block;font-weight:500;color:var(--muted);font-size:13px}
+.avatar{width:48px;height:48px;border-radius:999px;background:#E7DCCD;color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700}
+
+/* Perguntas */
+.faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq details{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:0 22px}
+.faq summary{list-style:none;cursor:pointer;min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-weight:700;font-size:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--f-display);font-size:28px;color:var(--brown);line-height:1;transition:transform .2s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding-bottom:20px;color:var(--muted)}
+
+/* Chamada final */
+.final{position:relative;color:var(--on-dark);background:var(--espresso) url("img/banner-4.jpg") center/cover no-repeat;isolation:isolate;text-align:center}
+.final::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(20,13,9,.8)}
+.final-inner{padding-block:clamp(64px,9vw,112px);display:flex;flex-direction:column;align-items:center;gap:20px}
+.final h2{font-size:clamp(36px,5vw,60px);line-height:1.02;max-width:720px}
+.final p{color:var(--on-dark-muted);font-size:17px;max-width:520px}
+.final .reassure{justify-content:center;color:var(--on-dark-muted)}
+
+footer{background:#140D09;color:var(--on-dark-muted);font-size:13px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-block:24px}
+.foot nav{display:flex;flex-wrap:wrap;gap:4px 18px}
+.foot a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.foot a:hover{color:var(--on-dark)}
+
+/* O que vem na caixa */
+.box{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.box-img{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#2A1D16}
+.box-img img{width:100%;height:100%;object-fit:cover;object-position:70% center}
+.box-img .stamp{position:absolute;left:16px;bottom:16px;padding:8px 14px;border-radius:999px;background:var(--paper);color:var(--ink);font-size:13px;font-weight:800}
+.box-list{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:18px}
+.box-list li{display:flex;gap:16px;align-items:flex-start}
+.box-ic{width:46px;height:46px;flex-shrink:0;border-radius:999px;background:var(--tan-soft);color:var(--brown);display:flex;align-items:center;justify-content:center}
+.box-ic svg{width:22px;height:22px}
+.box-list strong{display:block;font-size:16px}
+.box-list div span{display:block;font-size:14px;color:var(--muted)}
+
+/* Presente */
+.gift{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);background:var(--espresso);color:var(--on-dark);border-radius:14px;overflow:hidden}
+.gift-img{min-height:320px;background:#2A1D16}
+.gift-img img{width:100%;height:100%;object-fit:cover}
+.gift-body{padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:16px}
+.gift-body .eyebrow{color:var(--tan)}
+.gift-body h2{font-size:clamp(32px,3.6vw,46px);line-height:1.05}
+.gift-body > p{color:var(--on-dark-muted)}
+.durations{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.dur{position:relative;min-height:84px;padding:12px;border-radius:10px;border:2px solid rgba(246,239,229,.22);background:transparent;color:var(--on-dark);font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:border-color .2s ease,background .2s ease}
+.dur:hover{border-color:var(--tan)}
+.dur[aria-pressed="true"]{border-color:var(--tan);background:rgba(214,168,119,.14)}
+.dur b{font-family:var(--f-display);font-weight:400;font-size:26px;line-height:1}
+.dur span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--on-dark-muted)}
+.dur em{position:absolute;top:-10px;padding:2px 8px;border-radius:999px;background:var(--tan);color:var(--espresso);font-style:normal;font-size:11px;font-weight:800}
+.gift-total{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.gift-total strong{font-family:var(--f-display);font-weight:400;font-size:38px;line-height:1;font-variant-numeric:tabular-nums}
+.gift-total span{font-size:14px;color:var(--tan);font-weight:700}
+.gift-body .btn{align-self:flex-start;background:var(--tan);color:var(--espresso)}
+.gift-body .btn:hover{background:#E2B888}
+.gift-note{font-size:13px;color:var(--on-dark-muted)}
+
+/* Cupom */
+.coupon{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px;padding:clamp(24px,4vw,40px);border-radius:14px;background:var(--tan-soft);border:1px solid var(--line)}
+.coupon-text{flex:1 1 320px;min-width:0}
+.coupon h2{font-size:clamp(28px,3vw,38px);line-height:1.08;margin-bottom:6px}
+.coupon-text p{color:var(--muted)}
+.coupon form{flex:1 1 380px;max-width:480px;display:flex;flex-wrap:wrap;gap:10px}
+.coupon label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.coupon input{flex:1 1 220px;min-width:0;min-height:52px;padding-inline:18px;border-radius:6px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:500 15px var(--f-body)}
+.coupon .msg{flex-basis:100%;font-size:14px;min-height:1.4em;color:var(--brown);font-weight:600}
+.code{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}
+.code kbd{font:800 18px var(--f-body);letter-spacing:.12em;padding:6px 12px;border-radius:6px;border:2px dashed var(--brown);background:var(--paper);color:var(--ink)}
+.code button{min-height:44px;padding-inline:14px;border-radius:6px;border:0;background:var(--espresso);color:var(--on-dark);font:700 13px var(--f-body);cursor:pointer}
+
+/* WhatsApp */
+.wa{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:16;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.wa-btn{width:58px;height:58px;border-radius:999px;border:0;background:#1F8F4E;color:#fff;box-shadow:0 10px 24px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s ease}
+.wa-btn:hover{transform:scale(1.06)}
+.wa-btn svg{width:28px;height:28px}
+.wa-card{width:min(300px,calc(100vw - 40px));background:var(--paper);color:var(--ink);border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.25);overflow:hidden}
+.wa-card header{background:#1F8F4E;color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.wa-card header b{font-size:15px}
+.wa-card header small{display:block;font-size:12px;opacity:.9}
+.wa-close{width:44px;height:44px;margin:-10px -10px -10px 0;border:0;background:transparent;color:#fff;font-size:24px;cursor:pointer}
+.wa-card .wa-body{padding:16px;display:flex;flex-direction:column;gap:12px;font-size:14px}
+.wa-bubble{background:var(--cream);border-radius:0 10px 10px 10px;padding:10px 12px}
+.wa-card .btn{min-height:46px;width:100%;background:#1F8F4E;color:#fff;font-size:14px}
+.wa-card .btn:hover{background:#18763F}
+.wa-card .wa-num{font-size:12px;color:var(--muted);text-align:center}
+
+/* Foto do topo no celular */
+.hero-pic{display:none}
+
+/* Barra fixa no celular */
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;background:var(--espresso);color:var(--on-dark);padding:12px 18px;border-radius:8px;font-size:14px;font-weight:600;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:opacity .25s ease,transform .25s ease;pointer-events:none;z-index:20;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:900px){
+  .steps,.plans,.grid-3{grid-template-columns:minmax(0,1fr)}
+  .formats{grid-template-columns:minmax(0,1fr)}
+  .story{grid-template-columns:minmax(0,1fr)}
+  .story-img{min-height:260px}
+  .script{display:none}
+  .plan.featured{order:-1}
+  .box,.gift{grid-template-columns:minmax(0,1fr)}
+  .gift-img{min-height:220px}
+}
+@media (max-width:420px){
+  .durations{grid-template-columns:minmax(0,1fr)}
+  .dur{min-height:64px;flex-direction:row;gap:10px}
+  .dur em{position:static}
+}
+@media (max-width:700px){
+  .hero{background-image:none}
+  .hero::before{display:none}
+  .hero-pic{display:block;position:relative;margin-inline:calc(-1 * clamp(16px,4vw,32px));aspect-ratio:4/3;max-width:none;background:var(--espresso) url("img/banner-1.jpg") 88% 62%/auto 135% no-repeat}
+  .hero-pic::after{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(180deg,rgba(30,20,15,0) 0%,var(--espresso) 100%)}
+  .hero-body{padding-top:4px}
+  .bar .btn{display:none}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:15;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--espresso);color:var(--on-dark);box-shadow:0 -8px 24px rgba(0,0,0,.2);transform:translateY(110%);visibility:hidden;transition:transform .3s ease,visibility 0s linear .3s}
+  .mbar.show{transform:translateY(0);visibility:visible;transition:transform .3s ease,visibility 0s}
+  .mbar p{font-size:13px;line-height:1.3}
+  .mbar p b{display:block;font-size:15px}
+  .mbar .btn{min-height:44px;padding-inline:18px;font-size:14px;background:var(--tan);color:var(--espresso)}
+  footer{padding-bottom:80px}
+  .toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  .wa{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));transition:bottom .3s ease}
+  .wa.lift{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  .wa-btn{width:52px;height:52px}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="bean" viewBox="0 0 32 32"><ellipse cx="16" cy="16" rx="9" ry="13" transform="rotate(30 16 16)" fill="currentColor"/><path d="M11 25c4-4 7-14 11-18" stroke="#00000055" stroke-width="2.2" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="hero" id="topo">
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="#topo"><svg width="26" height="26" style="color:var(--tan)" aria-hidden="true"><use href="#bean"/></svg>Torra Mirante</a>
+      <a class="btn btn-brown" href="#planos">Assinar agora</a>
+    </div>
+    <p class="script" aria-hidden="true">Café melhor,<br>gente melhor</p>
+    <div class="hero-pic" role="img" aria-label="Xícara de café fumegando sobre grãos torrados"></div>
+    <div class="hero-body">
+      <span class="offer">Primeiro mês com 30% de desconto</span>
+      <h1>Café especial fresquinho <em>na sua porta</em>, todo mês</h1>
+      <p class="hero-lead">Assine o Clube Torra Mirante e receba cafés de pequenos produtores, torrados sob encomenda, em grãos, moídos ou em cápsulas.</p>
+      <div><a class="btn btn-brown" href="#planos">Escolher meu plano <svg aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      <div class="reassure">
+        <span><svg aria-hidden="true"><use href="#check"/></svg>Pause ou cancele quando quiser</span>
+        <span><svg aria-hidden="true"><use href="#check"/></svg>Frete grátis para todo o Brasil</span>
+        <span><svg aria-hidden="true"><use href="#check"/></svg>Garantia de sabor de 7 dias</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="como-funciona">
+    <div class="wrap">
+      <div class="head center">
+        <p class="eyebrow">Como funciona</p>
+        <h2>Três passos e o café chega sozinho</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="step-num">1</span><h3>Escolha o plano</h3><p>Defina o formato (grãos, moído ou cápsulas) e a quantidade que combina com a sua rotina.</p></div>
+        <div class="step"><span class="step-num">2</span><h3>Torramos sob encomenda</h3><p>Seu café é torrado em pequenos lotes e embalado logo depois, para chegar no auge do sabor.</p></div>
+        <div class="step"><span class="step-num">3</span><h3>Receba todo mês</h3><p>A caixa chega na sua porta com notas de degustação e uma dica de preparo. Você só precisa passar o café.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" aria-labelledby="caixa-titulo">
+    <div class="wrap box">
+      <div class="box-img">
+        <img src="img/banner-3.jpg" alt="Xícara de café fumegando ao lado de grãos torrados e folhas de café" loading="lazy">
+        <span class="stamp">Torrado na semana do envio</span>
+      </div>
+      <div>
+        <div class="head" style="margin-bottom:0">
+          <p class="eyebrow">O que vem na caixa</p>
+          <h2 id="caixa-titulo">Cada entrega é uma pequena viagem pelo Brasil</h2>
+        </div>
+        <ul class="box-list">
+          <li><span class="box-ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><ellipse cx="16" cy="16" rx="8" ry="12" transform="rotate(30 16 16)"/><path d="M11 25c4-4 7-14 11-18"/></svg></span><div><strong>Café especial fresquinho</strong><span>Pacotes de 250 g com válvula, ou cápsulas, de pequenos produtores.</span></div></li>
+          <li><span class="box-ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="5" width="20" height="22" rx="2"/><path d="M11 11h10M11 16h10M11 21h6"/></svg></span><div><strong>Cartão de degustação</strong><span>Origem, produtor, altitude e as notas para você procurar na xícara.</span></div></li>
+          <li><span class="box-ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 12h16v6a8 8 0 0 1-16 0z"/><path d="M23 14h2a3 3 0 0 1 0 6h-2.5M11 4c0 2 2 2 2 4M16 4c0 2 2 2 2 4"/></svg></span><div><strong>Receita do mês</strong><span>Um método de preparo passo a passo: coado, prensa francesa ou gelado.</span></div></li>
+          <li><span class="box-ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 27s-10-6-10-13a6 6 0 0 1 10-4 6 6 0 0 1 10 4c0 7-10 13-10 13z"/></svg></span><div><strong>Mimos de assinante</strong><span>De tempos em tempos, uma surpresa: amostras de lotes raros ou acessórios.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section plans-sec" id="planos" aria-labelledby="planos-titulo">
+    <div class="wrap">
+      <div class="head center">
+        <p class="eyebrow">Planos</p>
+        <h2 id="planos-titulo">Monte a sua assinatura</h2>
+        <p>Você pode trocar de formato ou de plano a qualquer momento.</p>
+      </div>
+
+      <p class="label-step"><b>1</b>Escolha o formato</p>
+      <div class="formats" role="group" aria-label="Formato do café">
+        <button class="format" type="button" data-format="em grãos" aria-pressed="true"><img src="img/cafe-graos-2.jpg" alt=""><span><strong>Em grãos</strong><small>Para quem mói na hora</small></span><span class="tick" aria-hidden="true"></span></button>
+        <button class="format" type="button" data-format="moído" aria-pressed="false"><img src="img/cafe-po-1.jpg" alt=""><span><strong>Moído</strong><small>Pronto para coador ou prensa</small></span><span class="tick" aria-hidden="true"></span></button>
+        <button class="format" type="button" data-format="em cápsulas" aria-pressed="false"><img src="img/capsulas-3.jpg" alt=""><span><strong>Cápsulas</strong><small>Compatíveis com o padrão Nespresso</small></span><span class="tick" aria-hidden="true"></span></button>
+      </div>
+
+      <p class="label-step"><b>2</b>Escolha a frequência</p>
+      <div class="freqs" role="group" aria-label="Frequência de entrega">
+        <button class="freq" type="button" data-freq="mensal" aria-pressed="true">Todo mês</button>
+        <button class="freq" type="button" data-freq="quinzenal" aria-pressed="false">A cada 15 dias</button>
+        <button class="freq" type="button" data-freq="bimestral" aria-pressed="false">A cada 2 meses</button>
+      </div>
+
+      <p class="label-step"><b>3</b>Escolha a quantidade</p>
+      <div class="plans">
+        <article class="plan">
+          <h3>Essencial</h3>
+          <p class="qty" data-grams="250 g" data-caps="30 cápsulas">250 g por mês, em grãos</p>
+          <p class="price" data-price="49.90">R$ 49,90<small class="per">/mês</small></p>
+          <p class="percup"></p>
+          <p class="promo"><span class="promo-label">1º mês por</span> R$ 34,93</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#check"/></svg>1 café de origem por mês</li>
+            <li><svg aria-hidden="true"><use href="#check"/></svg><span class="cups" data-grams="25" data-caps="30">Rende cerca de 25 xícaras</span></li>
+            <li><svg aria-hidden="true"><use href="#check"/></svg>Notas de degustação</li>
+          </ul>
+          <button class="btn btn-dark" type="button" data-plan="Essencial">Assinar Essencial</button>
+        </article>
+        <article class="plan featured">
+          <span class="tag">Mais escolhido</span>
+          <h3>Dupla</h3>
+          <p class="qty" data-grams="2 × 250 g" data-caps="60 cápsulas">2 × 250 g por mês, em grãos</p>
+          <p class="price" data-price="89.90">R$ 89,90<small class="per">/mês</small></p>
+          <p class="percup"></p>
+          <p class="promo"><span class="promo-label">1º mês por</span> R$ 62,93</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#check"/></svg>2 cafés de origens diferentes</li>
+            <li><svg aria-hidden="true"><use href="#check"/></svg><span class="cups" data-grams="50" data-caps="60">Rende cerca de 50 xícaras</span></li>
+            <li><svg aria-hidden="true"><use href="#check"/></svg>Notas de degustação e receita do mês</li>
+            <li><svg aria-hidden="true"><use href="#check"/></svg>Acesso antecipado a novos lotes</li>
+          </ul>
+          <button class="btn" type="button" data-plan="Dupla">Assinar Dupla</button>
+        </article>
+        <article class="plan">
+          <h3>Família</h3>
+          <p class="qty" data-grams="4 × 250 g" data-caps="120 cápsulas">4 × 250 g por mês, em grãos</p>
+          <p class="price" data-price="159.90">R$ 159,90<small class="per">/mês</small></p>
+          <p class="percup"></p>
+          <p class="promo"><span class="promo-label">1º mês por</span> R$ 111,93</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#check"/></svg>Até 4 cafés diferentes</li>
+            <li><svg aria-hidden="true"><use href="#check"/></svg><span class="cups" data-grams="100" data-caps="120">Rende cerca de 100 xícaras</span></li>
+            <li><svg aria-hidden="true"><use href="#check"/></svg>Notas de degustação e receita do mês</li>
+            <li><svg aria-hidden="true"><use href="#check"/></svg>Caneca de cerâmica de brinde na primeira caixa</li>
+          </ul>
+          <button class="btn btn-dark" type="button" data-plan="Família">Assinar Família</button>
+        </article>
+      </div>
+      <div class="picked" id="picked" hidden>
+        <p id="picked-text"></p>
+        <a class="btn" href="#planos" id="checkout">Continuar para o pagamento</a>
+      </div>
+      <p class="plans-note" id="plans-note">Cobrança a cada entrega. Pause, troque ou cancele pela sua conta, sem multa.</p>
+
+      <div class="guarantee">
+        <div class="seal" aria-hidden="true"><b>100%</b><span>GARANTIA</span></div>
+        <div class="g-text">
+          <h3>Garantia de sabor</h3>
+          <p>Não gostou da sua primeira caixa? Avise em até 7 dias depois de receber e devolvemos 100% do valor. Sem perguntas e sem precisar devolver o café.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="presente" aria-labelledby="presente-titulo">
+    <div class="wrap">
+      <div class="gift">
+        <div class="gift-img"><img src="img/cafe-xicara-1.jpg" alt="Xícara preta de café sobre uma bandeja de madeira com grãos e folhas" loading="lazy"></div>
+        <div class="gift-body">
+          <p class="eyebrow">Para presentear</p>
+          <h2 id="presente-titulo">Dê o Clube de presente</h2>
+          <p>Quem recebe ganha o plano Dupla todo mês durante o período escolhido. Pagamento único e sem renovação automática.</p>
+          <div class="durations" role="group" aria-label="Duração do presente">
+            <button class="dur" type="button" data-months="3" data-price="249.90" aria-pressed="false"><b>3</b><span>meses</span></button>
+            <button class="dur" type="button" data-months="6" data-price="479.90" aria-pressed="true"><em>Mais dado</em><b>6</b><span>meses</span></button>
+            <button class="dur" type="button" data-months="12" data-price="899.90" aria-pressed="false"><b>12</b><span>meses</span></button>
+          </div>
+          <div class="gift-total"><strong id="gift-price">R$ 479,90</strong><span id="gift-save">Economia de R$ 59,50</span></div>
+          <button class="btn" type="button" id="gift-btn">Presentear com 6 meses <svg aria-hidden="true"><use href="#arrow"/></svg></button>
+          <p class="gift-note">Você escolhe a data da primeira entrega e escreve uma mensagem para o cartão.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" aria-labelledby="historia-titulo">
+    <div class="story-img"><img src="img/banner-2.jpg" alt="Saca de juta com grãos de café e uma xícara fumegando" loading="lazy"></div>
+    <div class="story-copy">
+      <p class="eyebrow">De onde vem o seu café</p>
+      <h2 id="historia-titulo">Direto de pequenos produtores para a sua xícara</h2>
+      <p>Cada caixa traz cafés selecionados de regiões como Sul de Minas, Cerrado Mineiro e Chapada Diamantina, comprados de quem cuida do pé de café.</p>
+      <ul class="story-list">
+        <li><svg aria-hidden="true"><use href="#check"/></svg>Origem rastreável</li>
+        <li><svg aria-hidden="true"><use href="#check"/></svg>Torra em pequenos lotes</li>
+        <li><svg aria-hidden="true"><use href="#check"/></svg>Embalagem com válvula</li>
+        <li><svg aria-hidden="true"><use href="#check"/></svg>Cultivo responsável</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head center">
+        <p class="eyebrow">Quem já assina</p>
+        <h2>Gente de verdade. Sabor de verdade.</h2>
+      </div>
+      <div class="grid-3">
+        <figure class="review"><blockquote>“Virou o melhor momento do mês: abrir a caixa e descobrir de onde veio o café. O da Chapada me conquistou.”</blockquote><figcaption><span class="avatar" style="background:#22362B;color:#F6EFE5;font-size:15px">MC</span><span>Mariana Costa<span>Plano Dupla · Belo Horizonte</span></span></figcaption></figure>
+        <figure class="review"><blockquote>“Moro sozinho e o Essencial dura o mês certinho. O café chega muito fresco, dá para sentir no aroma.”</blockquote><figcaption><span class="avatar" style="background:#7A4527;color:#F6EFE5;font-size:15px">RL</span><span>Rafael Lima<span>Plano Essencial · Curitiba</span></span></figcaption></figure>
+        <figure class="review"><blockquote>“Aqui em casa todo mundo toma café. Com o Família, nunca mais faltou, e a caneca de brinde é linda.”</blockquote><figcaption><span class="avatar" style="background:#D6A877;color:#1E140F;font-size:15px">JP</span><span>Juliana e Pedro<span>Plano Família · Recife</span></span></figcaption></figure>
+      </div>
+      <p style="margin-top:16px;text-align:center;font-size:12px;color:var(--muted)">Depoimentos ilustrativos, apenas para demonstração do layout.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" aria-labelledby="faq-titulo">
+    <div class="wrap">
+      <div class="head center">
+        <p class="eyebrow">Perguntas frequentes</p>
+        <h2 id="faq-titulo">Ficou alguma dúvida?</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Posso pausar ou cancelar a assinatura?</summary><p>Sim. Pela sua conta você pausa um mês, troca de plano ou cancela quando quiser, sem multa.</p></details>
+        <details><summary>Como funciona a garantia de sabor?</summary><p>Se você não gostar da primeira caixa, é só avisar em até 7 dias depois de receber. Devolvemos 100% do valor pago e você não precisa mandar o café de volta.</p></details>
+        <details><summary>Quando o café é cobrado e enviado?</summary><p>A cobrança é feita no dia em que você assina e depois a cada entrega, conforme a frequência escolhida (todo mês, a cada 15 dias ou a cada 2 meses). O envio sai em até 3 dias úteis depois da torra.</p></details>
+        <details><summary>Como funciona a assinatura de presente?</summary><p>Você paga uma vez pelo período escolhido (3, 6 ou 12 meses) e quem recebe ganha o plano Dupla todo mês. Não há renovação automática: no fim do período, a pessoa decide se quer continuar.</p></details>
+        <details><summary>Posso mudar a frequência depois?</summary><p>Pode. Na sua conta você troca entre todo mês, a cada 15 dias ou a cada 2 meses a qualquer momento, e a mudança vale a partir da próxima entrega.</p></details>
+        <details><summary>Posso escolher os cafés que recebo?</summary><p>Todo mês enviamos uma seleção da curadoria. Se preferir, você pode fixar um café favorito na sua conta e recebê-lo todo mês.</p></details>
+        <details><summary>Quanto custa o frete?</summary><p>Nada. O frete é grátis para todo o Brasil em qualquer plano, com entrega entre 3 e 8 dias úteis, conforme a região.</p></details>
+        <details><summary>Quais formas de pagamento vocês aceitam?</summary><p>Cartão de crédito (Visa, Mastercard, Elo e Amex) e Pix recorrente.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" aria-labelledby="cupom-titulo">
+    <div class="wrap">
+      <div class="coupon">
+        <div class="coupon-text">
+          <h2 id="cupom-titulo">Ainda pensando? Ganhe 10% de desconto</h2>
+          <p>Deixe seu e-mail e receba um cupom de 10% para cafés avulsos, mais o nosso guia de preparo em casa.</p>
+        </div>
+        <form id="coupon-form" novalidate>
+          <label for="coupon-email">Seu e-mail</label>
+          <input id="coupon-email" type="email" placeholder="Seu melhor e-mail" autocomplete="email">
+          <button class="btn btn-dark" type="submit">Quero meu cupom</button>
+          <div class="msg" id="coupon-msg" role="status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap final-inner">
+      <h2>Comece seu próximo mês com um café melhor</h2>
+      <p>Escolha o plano em menos de um minuto. A primeira caixa sai logo após a próxima torra.</p>
+      <a class="btn btn-brown" href="#planos">Escolher meu plano <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      <div class="reassure"><span><svg aria-hidden="true"><use href="#check"/></svg>Pause ou cancele quando quiser</span><span><svg aria-hidden="true"><use href="#check"/></svg>Primeiro mês com 30% de desconto</span><span><svg aria-hidden="true"><use href="#check"/></svg>Garantia de sabor de 7 dias</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Torra Mirante · CNPJ 00.000.000/0001-00 · Marca fictícia para demonstração</span>
+    <nav aria-label="Rodapé"><a href="#topo">Termos de uso</a><a href="#topo">Privacidade</a><a href="#faq-titulo">Ajuda</a></nav>
+  </div>
+</footer>
+
+<div class="mbar">
+  <p><b>Clube Torra Mirante</b>1º mês a partir de R$ 34,93</p>
+  <a class="btn" href="#planos">Assinar</a>
+</div>
+
+<div class="wa" id="wa">
+  <div class="wa-card" id="wa-card" role="dialog" aria-labelledby="wa-title" hidden>
+    <header><span><b id="wa-title">Torra Mirante</b><small>Respondemos em poucos minutos</small></span><button class="wa-close" type="button" id="wa-close" aria-label="Fechar">×</button></header>
+    <div class="wa-body">
+      <p class="wa-bubble">Oi! Ficou com alguma dúvida sobre os planos, os cafés ou a entrega? Fale com a gente pelo WhatsApp.</p>
+      <a class="btn" href="https://wa.me/?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Clube%20Torra%20Mirante." target="_blank" rel="noopener">Abrir conversa no WhatsApp</a>
+      <p class="wa-num">(11) 4000-0000 · número fictício desta demonstração</p>
+    </div>
+  </div>
+  <button class="wa-btn" type="button" id="wa-btn" aria-expanded="false" aria-controls="wa-card" aria-label="Falar pelo WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9.5 9.5c0 2.5 2.5 5 5 5l1-1.2-1.6-.9-.8.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.8-.9-1.6z" fill="currentColor" stroke="none"/></svg>
+  </button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var format = 'em grãos';
+  var formats = document.querySelectorAll('.format');
+  var picked = document.getElementById('picked');
+  var pickedText = document.getElementById('picked-text');
+  var toast = document.getElementById('toast');
+  var current = null;
+  var timer;
+
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(timer);
+    timer = setTimeout(function () { toast.classList.remove('show'); }, 2600);
+  }
+  var freq = 'mensal';
+  var FREQ = {
+    mensal:    { when: 'por mês',         per: '/mês',      promo: '1º mês por' },
+    quinzenal: { when: 'a cada 15 dias',  per: '/entrega',  promo: '1ª entrega por' },
+    bimestral: { when: 'a cada 2 meses',  per: '/entrega',  promo: '1ª entrega por' }
+  };
+  function brl(n) { return 'R$ ' + n.toFixed(2).replace('.', ','); }
+  function isCaps() { return format === 'em cápsulas'; }
+  function qtyText(el) {
+    var f = FREQ[freq].when;
+    return isCaps() ? el.getAttribute('data-caps') + ' ' + f : el.getAttribute('data-grams') + ' ' + f + ', ' + format;
+  }
+  function updatePlans() {
+    document.querySelectorAll('.plan').forEach(function (plan) {
+      var q = plan.querySelector('.qty');
+      var c = plan.querySelector('.cups');
+      var cups = Number(c.getAttribute(isCaps() ? 'data-caps' : 'data-grams'));
+      var price = Number(plan.querySelector('.price').getAttribute('data-price'));
+      q.textContent = qtyText(q);
+      c.textContent = isCaps() ? cups + ' xícaras de espresso' : 'Rende cerca de ' + cups + ' xícaras';
+      plan.querySelector('.per').textContent = FREQ[freq].per;
+      plan.querySelector('.promo-label').textContent = FREQ[freq].promo;
+      plan.querySelector('.percup').innerHTML = 'Só <b>' + brl(price / cups) + '</b> por xícara';
+    });
+    var mbarText = document.querySelector('.mbar p');
+    mbarText.innerHTML = '<b>Clube Torra Mirante</b>' + (freq === 'mensal' ? '1º mês' : '1ª entrega') + ' a partir de R$ 34,93';
+  }
+  function updatePicked() {
+    if (!current) return;
+    var promo = current.plan.querySelector('.promo').textContent.trim();
+    pickedText.textContent = 'Plano ' + current.name + ': ' + qtyText(current.qtyEl) + '. ' + promo + '.';
+  }
+
+  document.querySelectorAll('.freq').forEach(function (b) {
+    b.addEventListener('click', function () {
+      freq = b.getAttribute('data-freq');
+      document.querySelectorAll('.freq').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      updatePlans();
+      updatePicked();
+    });
+  });
+
+  formats.forEach(function (b) {
+    b.addEventListener('click', function () {
+      format = b.getAttribute('data-format');
+      formats.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      updatePlans();
+      updatePicked();
+    });
+  });
+
+  document.querySelectorAll('[data-plan]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var plan = b.closest('.plan');
+      current = { name: b.getAttribute('data-plan'), plan: plan, qtyEl: plan.querySelector('.qty') };
+      updatePicked();
+      picked.hidden = false;
+      picked.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+    });
+  });
+
+  document.getElementById('checkout').addEventListener('click', function (e) {
+    e.preventDefault();
+    showToast('Checkout de demonstração: nenhuma cobrança foi feita.');
+  });
+
+  updatePlans();
+
+  // Presente
+  var durs = document.querySelectorAll('.dur');
+  var giftPrice = document.getElementById('gift-price');
+  var giftSave = document.getElementById('gift-save');
+  var giftBtn = document.getElementById('gift-btn');
+  var giftMonths = 6;
+  var MONTHLY = 89.90;
+  durs.forEach(function (d) {
+    d.addEventListener('click', function () {
+      durs.forEach(function (x) { x.setAttribute('aria-pressed', x === d ? 'true' : 'false'); });
+      giftMonths = Number(d.getAttribute('data-months'));
+      var price = Number(d.getAttribute('data-price'));
+      giftPrice.textContent = brl(price);
+      giftSave.textContent = 'Economia de ' + brl(giftMonths * MONTHLY - price);
+      giftBtn.firstChild.textContent = 'Presentear com ' + giftMonths + ' meses ';
+    });
+  });
+  giftBtn.addEventListener('click', function () {
+    showToast('Presente de ' + giftMonths + ' meses: checkout de demonstração, nenhuma cobrança foi feita.');
+  });
+
+  // Cupom
+  var cForm = document.getElementById('coupon-form');
+  var cEmail = document.getElementById('coupon-email');
+  var cMsg = document.getElementById('coupon-msg');
+  cForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cEmail.value.trim())) {
+      cMsg.textContent = 'Digite um e-mail válido, como voce@exemplo.com.';
+      cEmail.focus();
+      return;
+    }
+    cMsg.innerHTML = '<span class="code">Seu cupom: <kbd id="code">CAFE10</kbd><button type="button" id="copy">Copiar</button></span>';
+    cEmail.value = '';
+    document.getElementById('copy').addEventListener('click', function () {
+      var btn = this;
+      function done(ok) { btn.textContent = ok ? 'Copiado' : 'Selecione e copie'; }
+      try {
+        navigator.clipboard.writeText('CAFE10').then(function () { done(true); }, function () { selectCode(); done(false); });
+      } catch (err) { selectCode(); done(false); }
+    });
+  });
+  function selectCode() {
+    var r = document.createRange(); r.selectNodeContents(document.getElementById('code'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+
+  // WhatsApp
+  var wa = document.getElementById('wa');
+  var waBtn = document.getElementById('wa-btn');
+  var waCard = document.getElementById('wa-card');
+  function setWa(open) {
+    waCard.hidden = !open;
+    waBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  waBtn.addEventListener('click', function () { setWa(waCard.hidden); });
+  document.getElementById('wa-close').addEventListener('click', function () { setWa(false); waBtn.focus(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !waCard.hidden) { setWa(false); waBtn.focus(); } });
+
+  // Barra fixa do celular: só aparece depois que o topo sai da tela
+  var mbar = document.querySelector('.mbar');
+  var hero = document.getElementById('topo');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      var show = !entries[0].isIntersecting;
+      mbar.classList.toggle('show', show);
+      wa.classList.toggle('lift', show);
+    }, { threshold: 0 }).observe(hero);
+  } else {
+    mbar.classList.add('show');
+    wa.classList.add('lift');
+  }
+})();
+</script>
+</body>
+</html>
